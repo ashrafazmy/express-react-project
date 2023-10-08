@@ -10,9 +10,9 @@ function App() {
 
   async function getUsers(){
     try {
-      const response = await fetch('/resume');
+      const response = await fetch('/api/resume');
       const data = await response.json();
-      console.log('data',data);
+      console.log('data',users);
       setUsers(data);
     } catch (error) {
       console.error('Error fetching users:', error);
