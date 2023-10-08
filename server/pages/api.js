@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       .select();
 
     if (usersError) {
-      throw usersError;
+      throw usersError; 
     }
 
     res.status(200).json(users);
