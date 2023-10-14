@@ -5,6 +5,18 @@ import Navigate from '../app/components/Navigate'
 import Contacts from '../app/components/Contacts'
 import Content from '../app/components/Content'
 
+export const copyContent = async (elementId) => {
+    const text = document?.getElementById(elementId)?.innerHTML;
+    console.log('text', text);
+
+    if (text) {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (err) {
+        console.error('Failed to copy: ', err);
+      }
+    }
+  };
 
 export default function About() {
 
@@ -16,7 +28,7 @@ export default function About() {
         <br/>
         <Navigate/>
         <br/>
-        <Endpoints id='endpoints'/>
+        <Endpoints/>
         <br/>
         <Contacts/>
 

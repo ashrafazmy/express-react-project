@@ -7,15 +7,11 @@ function Content() {
             <h2>Table of Contents</h2>
             
             <ul>
-                <li>
-                <a href="#navigate">Navigate</a>
-                </li>
-                <li>
-                <a href="#endpoints">Endpoints</a>
-                </li>
-                <li>
-                <a href="#contact">Contacts</a>
-                </li>
+                <li className='contents'><a href="#navigate">Navigate</a></li>
+
+                <li className='contents'><a href="#endpoints">Endpoints</a></li>
+                
+                <li className='contents'><a href="#contact">Contacts</a></li>
             </ul>
         </div>
     )}
