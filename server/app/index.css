@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+/* .title {
+    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Josefin Sans', cursive;
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+  } */
+
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    background-color: #FAFAFA;
+    font-family: 'Josefin Sans', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
