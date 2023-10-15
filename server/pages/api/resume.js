@@ -62,12 +62,23 @@ export default async function handler(req, res) {
         throw contactError;
       }
 
+       // comment
+       const { data: comment, error: commentError } = await supabase
+       .from('contacts')
+       .select()
+       .eq('resume_id', userId);
+
+     if (contactError) {
+       throw contactError;
+     }
+
       const userData = {
         ...user,
         experiences,
         projects,
         educations,
         contacts,
+        comment,
       };
 
       responseData.push(userData);
