@@ -20,7 +20,7 @@ export default async function handler(req, res) {
       if (insertError) {
         throw insertError;
       }
-      res.status(200).json(newComment);
+      res.status(201).json(newComment);
     } catch (error) {
       res.status(500).json({ error: 'An internal server error occurred' });
     }
