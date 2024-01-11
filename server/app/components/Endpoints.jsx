@@ -59,6 +59,32 @@ function Endpoints() {
                     <span id='contact'>https://ashrafazmy-resume-api.vercel.app/api/contacts</span>
                     <button className='button' onClick={() => copyContent('contact')}>Copy</button>
                 </div>
+
+                <br/>
+                <br/>
+
+                <li>Comment: displays comments that are left on my page</li>
+                <div className='btn-text'>
+                    <span id='comment'>https://ashrafazmy-resume-api.vercel.app/api/comment</span>
+                    <button className='button' onClick={() => copyContent('comment')}>Copy</button>
+                </div>
+                <br/>
+
+                <div class="message">
+                    You can leave a comment on my page too by using a POST request to the endpoint, sending the JSON below as a format for the body of the data
+                </div>
+
+                <div className='btn-text'>
+                    <span id='json'>
+                    {"\{"}
+                    {"\n"}
+                    {"  \"name\": \"your name\",\n"}
+                    {"  \"email\": \"your_email@domain.com\",\n"}
+                    {"  \"message\": \"your message here! (200 character limit)\"\n"}
+                    {"\}"}
+                    </span>
+                    <button className='button' onClick={() => copyContent('json')}>Copy</button>
+                </div>
             </ol>
         </div>)
   }
