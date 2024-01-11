@@ -8,17 +8,36 @@ const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseURL, supabaseAnonKey);
 
 export default async function handler(req, res) {
-  try {
-    const { data: users, error: usersError } = await supabase
+
+  if (req.method == 'POST'){
+    try {
+      const commentBody = req.body;
+
+      const { data: newComment, error: insertError } = await supabase
       .from('comment')
-      .select();
+      .insert([commentBody]);
 
-    if (usersError) {
-      throw usersError;
+      if (insertError) {
+        throw insertError;
+      }
+      res.status(200).json(newComment);
+    } catch (error) {
+      res.status(500).json({ error: 'An internal server error occurred' });
     }
+  } else if(req.method == 'GET'){
 
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(500).json({ error: 'An internal server error occurred' });
+    try {
+      const { data: users, error: usersError } = await supabase
+        .from('comment')
+        .select();
+  
+      if (usersError) {
+        throw usersError;
+      }
+  
+      res.status(200).json(users);
+    } catch (error) {
+      res.status(500).json({ error: 'An internal server error occurred' });
+    }
   }
 }
