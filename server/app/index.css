@@ -88,3 +88,7 @@ li::marker {
     color: #ffc400;
 }
 
+#json, .message {
+    line-height: 1.5;
+}
+
