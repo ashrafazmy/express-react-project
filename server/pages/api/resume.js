@@ -64,7 +64,7 @@ export default async function handler(req, res) {
 
        // comment
        const { data: comment, error: commentError } = await supabase
-       .from('contacts')
+       .from('comment')
        .select()
        .eq('resume_id', userId);
 
